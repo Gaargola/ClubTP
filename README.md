@@ -10,6 +10,7 @@ deporte aparece varias veces pero con distintas categorías según las edades de
 Se deberá desarrollar una aplicación, utilizando las clases que considere necesarias, utilizando
 herencia cuando corresponda. La aplicación debe proveer, mediante un menú, las siguientes
 funcionalidades:
+
 a- Dar de alta a un entrenador
 b- Dar de baja a un entrenador
 c- Dar de alta a un niño/socio en un deporte. Validar que haya cupo usando una excepción.
