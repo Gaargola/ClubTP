@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: demondev
- * Date: 19/6/2025
- * Time: 19:59
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 
 namespace ClubTP
 {
@@ -14,7 +6,7 @@ namespace ClubTP
 	{
 		public static void Main(string[] args)
 		{
-			
+			Console.WriteLine("Cambios hechos por Mauro");
 			Persona a = new Persona();
 			a.mostrarNombre();
 			a.definirNombre();
