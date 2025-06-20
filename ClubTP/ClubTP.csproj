@@ -45,7 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Club.cs" />
+    <Compile Include="Deporte.cs" />
+    <Compile Include="DeporteCategoria.cs" />
     <Compile Include="Entrenador.cs" />
+    <Compile Include="Ninio.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
