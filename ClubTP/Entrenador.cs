@@ -2,9 +2,6 @@
 
 namespace ClubTP
 {
-	/// <summary>
-	/// Description of Entrenador.
-	/// </summary>
 	public class Entrenador: Persona
 	{
 		private int Legajo;
@@ -14,6 +11,8 @@ namespace ClubTP
 		{
 			this.Legajo = legajo;
 		}
+
+    // Metodos
 		public int definirLegajo(){
 			Console.WriteLine("Ingrese el Legajo del entrenador: ");
 			this.Legajo = int.Parse(Console.ReadLine());
@@ -25,6 +24,8 @@ namespace ClubTP
 		}
 		public void mostrarLegajo(){
 			Console.WriteLine("El legajo del entrenador es "+Legajo);
-    	}
+    }
+
+    // Vamos a agregar propiets?
 	}
 }

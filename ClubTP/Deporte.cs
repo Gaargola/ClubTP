@@ -1,36 +1,40 @@
-﻿/*
- * Created by SharpDevelop.
- * User: nico user
- * Date: 20/6/2025
- * Time: 11:00
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 
 namespace ClubTP
 {
 	public class Deporte
 	{
-		private string Nombre;
-		public Deporte(){}
+		private string nombreDeporte;
+
 		public Deporte(string nombre)
 		{
-		    this.Nombre = nombre;
+		    this.nombreDeporte = nombre;
 		}
-		public string nombrarDeporte()
+
+    // Propiedades 
+		public string NombrarDeporte
 		{
-			Console.WriteLine("Ingrese nombre del deporte: ");
-			this.Nombre = Console.ReadLine();
-			return Nombre;
+		  get {return NombreDeporte;}
+      set {NombreDeporte = value;}
 		}
+
+  //Esto rompe el encapsulamiento.
+  //public string NombreDeporte()
+  // {
+	    //Console.WriteLine("Ingrese nombre del deporte: ");
+      //this.Nombre = Console.ReadLine();
+		  //return Nombre;
+  //}
+
+
+    // Métodos
 		public void mostrarNombreDeporte()
 		{
-			Console.WriteLine("El nombre del deporte es: "+Nombre);
+			Console.WriteLine("El nombre del deporte es: {0} ", Nombre);
 		}
-		public string retornarNombre()
-		{
-		    return Nombre;
-		}
+		//public string retornarNombre()
+		//{
+		//    return Nombre;
+		//}
 	}
 }

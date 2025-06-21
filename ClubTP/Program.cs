@@ -7,27 +7,28 @@ namespace ClubTP
 	{
 		public static void Main(string[] args)
 		{
-		  Persona a = new Persona();
-			a.mostrarNombre();
-			a.definirNombre();
-			a.mostrarNombre();
+      // Acordate de dejar comentarios para saber que quisiste hacer.
+		  Persona auxA = new Persona();
+			auxA.mostrarNombre();
+			auxA.definirNombre();
+			auxA.mostrarNombre();
 			
-			Entrenador b = new Entrenador();
-			b.definirNombre();
-			b.definirDni();
-			b.definirEdad();
-			b.definirLegajo();
-			b.mostrarNombre();
-			b.mostrarDni();
-			b.mostrarEdad();
-			b.mostrarLegajo();
+			Entrenador auxB = new Entrenador();
+			auxB.definirNombre();
+			auxB.definirDni();
+			auxB.definirEdad();
+			auxB.definirLegajo();
+			auxB.mostrarNombre();
+			auxB.mostrarDni();
+			auxB.mostrarEdad();
+			auxB.mostrarLegajo();
 			
-			DeporteCategoria a = new DeporteCategoria("2006",b,20,15,15000);
-			a.mostrarNombreDeporte();
-			a.nombrarDeporte();
-			a.mostrarNombreDeporte();
+			DeporteCategoria auxC = new DeporteCategoria("2006",b,20,15,15000);
+			auxC.mostrarNombreDeporte();
+			auxC.nombrarDeporte();
+			auxC.mostrarNombreDeporte();
 			
-			Console.Write("Press any key to continue . . . ");
+			Console.Write("Presiona una tecla para finalizar . . . ");
 			Console.ReadKey(true);
 			
 		}
