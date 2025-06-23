@@ -1,11 +1,14 @@
-﻿using System;
+﻿
+using System;
 using System.Collections;
+
 namespace ClubTP
 {
 
 	public class Club
 	{
-		private string Nombre;
+    // Valores con Propiedades en minúscula.
+		private string nombre;
 		private ArrayList Deportes;
 		private ArrayList DeportesCat;
 		private ArrayList Entrenadores;
@@ -13,25 +16,62 @@ namespace ClubTP
 		
 		public Club()
 		{
-			this.Deportes = new ArrayList();
+		    this.Deportes = new ArrayList();
 			this.DeportesCat = new ArrayList();
 			this.Entrenadores = new ArrayList();
 			this.Ninios = new ArrayList();
 		}
 		public Club(string nombre)
 		{
-			this.Nombre = nombre;
+			this.nombre = nombre;
 			this.Deportes = new ArrayList();
 			this.DeportesCat = new ArrayList();
 			this.Entrenadores = new ArrayList();
 			this.Ninios = new ArrayList();
 		}
-		public string definirNombreClub()
-		{
-			Console.WriteLine("Ingrese el nombre del Club: ");
-			this.Nombre = Console.ReadLine();
-			return Nombre;
-		}
 		
-	}
+    // Propiedad
+    // Empieza con Mayúscula el mismo nombre que el atributo.
+    public string Nombre
+    {
+        get {return nombre;}
+        set {nombre = value;}
+    }
+// agregue metodos de registro   
+    public void registrarDeporte(Deporte deporte)
+    {
+    	Deportes.Add(deporte);
+    }
+    public void registrarDeporteCat(DeporteCategoria deporteCat)
+    {
+    	DeportesCat.Add(deporteCat);
+    }
+    public void registrarNinio(Ninio ninio)
+    {
+    	Ninios.Add(ninio);
+    }
+    public void registrarEntrenador(Entrenador entrenador)
+    {
+    	Entrenadores.Add(entrenador);
+    }
+    public void mostrarDeportes()
+    {
+    	Console.WriteLine("Los deportes practicados en el club son: ");
+    	for(int i=0;i<Deportes.Count;i++)
+    	{
+    		Deporte aux = (Deporte)Deportes[i];
+    		aux.mostrarNombreDeporte();
+    	}
+    }
+    public void mostrarEntrenadores()
+    {
+    	Console.WriteLine("Los entrenadores del club son: ");
+    	for(int i=0;i<Entrenadores.Count;i++)
+    	{
+            Entrenador aux = (Entrenador)Entrenadores[i];
+            aux.MostrarDatos();
+    	}
+    }
+  }
 }
+// cambios nico

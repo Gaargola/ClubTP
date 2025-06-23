@@ -1,30 +1,33 @@
-﻿using System;
+﻿
+using System;
 
 namespace ClubTP
 {
-	/// <summary>
-	/// Description of Entrenador.
-	/// </summary>
 	public class Entrenador: Persona
 	{
-		private int Legajo;
+		private int legajo;
 		
 		public Entrenador(){}
-		public Entrenador(int legajo)
+		public Entrenador(string nombre, int dni, int edad, int legajo):base(nombre,dni,edad)
 		{
-			this.Legajo = legajo;
+			this.legajo = legajo;
 		}
-		public int definirLegajo(){
-			Console.WriteLine("Ingrese el Legajo del entrenador: ");
-			this.Legajo = int.Parse(Console.ReadLine());
-			return Legajo;
-		}
+    
+    // Propiedades
+       public int Legajo
+       {
+            get {return legajo;}
+            set {legajo = value;}
+       }
+     
+    // Métodos
 		public int retornarLegajo()
 		{
-			return Legajo;
+		    return Legajo;
 		}
 		public void mostrarLegajo(){
-			Console.WriteLine("El legajo del entrenador es "+Legajo);
-    	}
-	}
+			Console.WriteLine("El legajo del entrenador es {0}",Legajo);
+  }
+ }
 }
+// cambios nico

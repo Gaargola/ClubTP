@@ -1,78 +1,67 @@
-﻿/*
- * Created by SharpDevelop.
- * User: nico user
- * Date: 20/6/2025
- * Time: 11:10
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
+﻿
 using System;
 using System.Collections;
 namespace ClubTP
 {
-	/// <summary>
-	/// Description of DeporteCategoria.
-	/// </summary>
 	public class DeporteCategoria: Deporte
 	{
-		private string Categoria;
-		private Entrenador Entrenador;
-        private int Cupo;
-        private int CantidadInscriptos;
-        private ArrayList Dias;
-        private ArrayList Horarios;
-        private ArrayList NiniosInscriptos;
-        private float PrecioCuota;
-		public DeporteCategoria()
+	private string categoria;
+    private Entrenador entrenador;
+    private int cupo;
+    private int cantidadInscriptos;
+    private ArrayList dias;
+    private ArrayList horarios;
+    private ArrayList niniosInscriptos;
+    private float precioCuota;
+
+
+    // Te falto usar ' : base() ' si se quiere heredar algo.
+    // No se puede usar un atributo private, tampoco llamarlo así.
+    public DeporteCategoria(){}
+    public DeporteCategoria(string nombreDeporte, string categoria,Entrenador entrenador,int cupo,int cantidadinscriptos,float preciocuota) : base(nombreDeporte)
 		{
-		    this.Dias = new ArrayList();
-            this.Horarios = new ArrayList();
-            this.NiniosInscriptos = new ArrayList();
+			// nombrarDeporte();
+	  this.categoria = categoria;
+	  this.entrenador = entrenador;
+      this.cupo = cupo;
+      this.cantidadInscriptos = cantidadinscriptos;
+      this.precioCuota = preciocuota;
+      this.dias = new ArrayList();
+      this.horarios = new ArrayList();
+      this.niniosInscriptos = new ArrayList();
 		}
-		public DeporteCategoria(string categoria,Entrenador entrenador,int cupo,int cantidadinscriptos,float preciocuota)
+
+    // Propiedades corregidas.
+	   
+        public string Categoria
+        {
+            get{return categoria;}
+            set{categoria = value;}
+        }
+		public Entrenador Entrenador
 		{
-			nombrarDeporte();
-			this.Categoria = categoria;
-			this.Entrenador = entrenador;
-            this.Cupo = cupo;
-            this.CantidadInscriptos = cantidadinscriptos;
-            this.PrecioCuota = preciocuota;
-            this.Dias = new ArrayList();
-            this.Horarios = new ArrayList();
-            this.NiniosInscriptos = new ArrayList();
+			get{return entrenador;}
+			set{entrenador = value;}
 		}
-		public string definirCategoria()
+		public int Cupo
 		{
-			Console.WriteLine("Ingrese el nombre de la categoria: ");
-			this.Categoria = Console.ReadLine();
-			return Categoria;
+			get{return cupo;}
+			set{cupo = value;}
 		}
-		public Entrenador asignarEntrenador(Entrenador entrenador)
+		public int CantidadInscriptos
 		{
-			this.Entrenador = entrenador;
-			return Entrenador;
+			get{return cantidadInscriptos;}
+			set{cantidadInscriptos = value;}
 		}
-		public int definirCupo(int cupo)
+		public float PrecioCuota
 		{
-			Console.WriteLine("Ingrese la cantidad de cupos: ");
-			this.Cupo = int.Parse(Console.ReadLine());
-			return Cupo;
+			get{return precioCuota;}
+			set{precioCuota = value;}
 		}
-		public int definirInscriptos()
-		{
-			Console.WriteLine("Ingrese la cantidad de inscriptos: ");
-			this.CantidadInscriptos = int.Parse(Console.ReadLine());
-		    return CantidadInscriptos;
-		}
-		public float definirPrecioCuota()
-		{
-			Console.WriteLine("Ingrese el precio de la cuota: ");
-			this.PrecioCuota = float.Parse(Console.ReadLine());
-		    return PrecioCuota;
-		}
+    // Métodos
 		public bool hayCupo()
 		{
-			if(Cupo-CantidadInscriptos > 0)
+			if(cupo-cantidadInscriptos > 0)
 			{
 			   return true; 
 			}
@@ -85,15 +74,17 @@ namespace ClubTP
 		{
 			if(hayCupo())
 			{
-				NiniosInscriptos.Add(ninio);
-				Console.WriteLine("La inscripcion fue realizada con exito");
+				niniosInscriptos.Add(ninio);
+				cantidadInscriptos++;
+				Console.WriteLine("La inscripción fue realizada con éxito.");
 				return true;
 			}
 			else
 			{
-				Console.WriteLine("No se pudo realizar la inscripcion por falta de cupos");
+				Console.WriteLine("No se pudo realizar la inscripción por falta de cupos.");
 				return false;
 			}
 		}
 	}
 }
+// cambios nico
