@@ -34,8 +34,8 @@ namespace ClubTP
     // Empieza con Mayúscula el mismo nombre que el atributo.
     public string Nombre
     {
-        get {return nombre;}
-        set {nombre = value;}
+    	get {return nombre;}
+    	set {nombre = value;}
     }
 // agregue metodos de registro   
     public void registrarDeporte(Deporte deporte)
@@ -72,6 +72,7 @@ namespace ClubTP
             aux.MostrarDatos();
     	}
     }
+    // falta metodo eliminar entrenador
   }
 }
 // cambios nico
