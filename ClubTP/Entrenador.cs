@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 namespace ClubTP
 {
@@ -7,7 +8,7 @@ namespace ClubTP
 		private int legajo;
 		
 		public Entrenador(){}
-		public Entrenador(int legajo)
+		public Entrenador(string nombre, int dni, int edad, int legajo):base(nombre,dni,edad)
 		{
 			this.legajo = legajo;
 		}
@@ -18,14 +19,21 @@ namespace ClubTP
       get {return legajo;}
       set {legajo = value;}
     }
-    
+       public int Legajo
+       {
+            get {return legajo;}
+            set {legajo = value;}
+       }
     // Métodos
 		public int retornarLegajo()
 		{
-			return Legajo;
+		    return Legajo;
 		}
 		public void mostrarLegajo(){
 			Console.WriteLine("El legajo del entrenador es {0}",legajo);
     }
 	}
+		Console.WriteLine("El legajo del entrenador es {0}",Legajo);
+  }
+ }
 }

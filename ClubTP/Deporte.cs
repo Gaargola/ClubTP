@@ -1,10 +1,14 @@
-﻿using System;
+
+using System;
+
 
 namespace ClubTP
 {
 	public class Deporte
 	{
 		private string nombreDeporte;
+
+		public Deporte(){}
 
 		public Deporte(string nombre)
 		{
@@ -16,8 +20,7 @@ namespace ClubTP
 		{
 		  get {return NombreDeporte;}
       set {NombreDeporte = value;}
-		}
-  
+
     // Métodos de instancia
 		public void mostrarNombreDeporte()
 		{

@@ -12,9 +12,9 @@ namespace ClubTP
 		public Ninio(){}
     
     // Métodos de instancia.
-    public bool pagar(bool statusSocio){}
-    public void modificarDeporte(){}
-    public void definirCategiria(){}
-    public void modificarEstatus(){}
+    //public bool pagar(bool statusSocio){}
+    //public void modificarDeporte(){}
+    //public void definirCategiria(){}
+    //public void modificarEstatus(){}
 	}
 }

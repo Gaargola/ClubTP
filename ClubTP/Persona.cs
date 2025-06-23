@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 namespace ClubTP
 {
@@ -9,13 +10,14 @@ namespace ClubTP
 		private int dni;
 		private int edad;
 		
-
-		public Persona(string nombre, int dni, int edad)
+		public Persona(){}
+		
+    public Persona(string nombre, int dni, int edad)
 		{
 			this.nombre = nombre;
 			this.dni = dni;
 			this.edad = edad;
-		}
+    }
 
     //Propiedades
     public string Nombre
@@ -40,6 +42,11 @@ namespace ClubTP
       Console.WriteLine("Datos de la Persona: ")
       Console.WriteLine("Nombre: {0} - DNI: {1} - Edad: {2} ", nombre, dni, edad);
     }
+    // Métodos
+    public void MostrarDatos()
+    {
+     // si no se agrega queda mejor Console.WriteLine("Datos de la Persona: ");
+      Console.WriteLine("Nombre: {0} - DNI: {1} - Edad: {2} ", nombre, dni, edad);
+    }
 	}
 }
-
