@@ -11,30 +11,21 @@ namespace ClubTP
 		    this.nombreDeporte = nombre;
 		}
 
-    // Propiedades 
+    // Propiedad
 		public string NombrarDeporte
 		{
 		  get {return NombreDeporte;}
       set {NombreDeporte = value;}
 		}
-
-  //Esto rompe el encapsulamiento.
-  //public string NombreDeporte()
-  // {
-	    //Console.WriteLine("Ingrese nombre del deporte: ");
-      //this.Nombre = Console.ReadLine();
-		  //return Nombre;
-  //}
-
-
-    // Métodos
+  
+    // Métodos de instancia
 		public void mostrarNombreDeporte()
 		{
 			Console.WriteLine("El nombre del deporte es: {0} ", Nombre);
 		}
-		//public string retornarNombre()
-		//{
-		//    return Nombre;
-		//}
-	}
+	  public virtual void definirNombre()
+    {
+      // Definir nombre de deporte.
+    }
+  }
 }

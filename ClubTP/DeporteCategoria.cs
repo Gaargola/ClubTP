@@ -11,14 +11,11 @@ namespace ClubTP
     private ArrayList Dias;
     private ArrayList Horarios;
     private ArrayList NiniosInscriptos;
-    private float PrecioCuota;
-
+    private float precioCuota;
 
     // Te falto usar ' : base() ' si se quiere heredar algo.
-    // No se puede usar un atributo private, tampoco llamarlo así.
 		public DeporteCategoria(string categoria,Entrenador entrenador,int cupo,int cantidadinscriptos,float preciocuota)
 		{
-			// nombrarDeporte();
 			this.Categoria = categoria;
 			this.Entrenador = entrenador;
       this.Cupo = cupo;
@@ -28,14 +25,7 @@ namespace ClubTP
       this.Horarios = new ArrayList();
       this.NiniosInscriptos = new ArrayList();
 		}
-
-    // Propiedades mal hechas, falta corregir.
-		public string definirCategoria()
-		{
-			Console.WriteLine("Ingrese el nombre de la categoría: ");
-			this.Categoria = Console.ReadLine();
-			return Categoria;
-		}
+     // Métodos de instancia.
 		public Entrenador asignarEntrenador(Entrenador entrenador)
 		{
 			this.Entrenador = entrenador;
@@ -51,7 +41,7 @@ namespace ClubTP
 		{
 			Console.WriteLine("Ingrese la cantidad de inscriptos: ");
 			this.CantidadInscriptos = int.Parse(Console.ReadLine());
-		    return CantidadInscriptos;
+		  return CantidadInscriptos;
 		}
 		public float definirPrecioCuota()
 		{
@@ -59,10 +49,10 @@ namespace ClubTP
 			this.PrecioCuota = float.Parse(Console.ReadLine());
 		  return PrecioCuota;
 		}
-    // Métodos
+
 		public bool hayCupo()
 		{
-			if(Cupo-CantidadInscriptos > 0)
+			if(Cupo - CantidadInscriptos > 0)
 			{
 			   return true; 
 			}

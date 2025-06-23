@@ -17,22 +17,6 @@ namespace ClubTP
 			this.edad = edad;
 		}
 
-		//public string definirNombre(){
-		//	Console.WriteLine("Ingrese nombre de la persona: ");
-		//	this.Nombre = Console.ReadLine();
-		//	return Nombre;
-		//}
-		//public int definirDni(){
-		//	Console.WriteLine("Ingrese DNI de la persona: ");
-		//	this.Dni = int.Parse(Console.ReadLine());
-		//	return Dni;
-		//}
-		//public int definirEdad(){
-		//	Console.WriteLine("Ingrese edad de la persona: ");
-		//	this.Edad = int.Parse(Console.ReadLine());
-		//	return Edad;
-		//}
-    
     //Propiedades
     public string Nombre
     {
@@ -50,22 +34,12 @@ namespace ClubTP
       set{edad = value;}
     }
 
-    // Métodos
+    // Método de instancia.
     public void MostrarDatos()
     {
       Console.WriteLine("Datos de la Persona: ")
       Console.WriteLine("Nombre: {0} - DNI: {1} - Edad: {2} ", nombre, dni, edad);
     }
-    
-		//public void mostrarNombre(){
-		//	Console.WriteLine("El nombre de la persona es: " +Nombre);
-		//}
-		//public void mostrarDni(){
-		//	Console.WriteLine("El DNI de la persona es: " +Dni);
-		//}
-		//public void mostrarEdad(){
-		//	Console.WriteLine("La edad de la persona es: " +Edad);
-		//}
 	}
 }
 

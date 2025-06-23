@@ -22,20 +22,30 @@ namespace ClubTP
 			this.Ninios = new ArrayList();
 		}
 
-    // Método o Propiedad mal hechas.
-		//public string definirNombreClub()
-		//{
-		//	Console.WriteLine("Ingrese el nombre del Club: ");
-		//	this.Nombre = Console.ReadLine();
-		//	return Nombre;
-		//}
-		
     // Propiedad
     // Empieza con Mayúscula el mismo nombre que el atributo.
     public string Nombre
     {
       get {return nombre;}
       set {nombre = value;}
+    }
+
+    // Métodos de instancia
+    public string definirNombre()
+    {
+      // Definir nombre.
+    }
+    public void mostrarEntrenadores()
+    {
+      // Listado de entrenadores.
+    }
+    public void mostrarSocios()
+    {
+      // Listado de Socios.
+    }
+    public void mostrarDeportesCat()
+    {
+      // Listado de deportes por categoría.
     }
 
 	}
