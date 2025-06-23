@@ -40,7 +40,6 @@ namespace ClubTP
       get {return nombre;}
       set {nombre = value;}
     }
-
     // Métodos de instancia
     public string definirNombre()
     {
@@ -94,5 +93,6 @@ namespace ClubTP
             aux.MostrarDatos();
     	}
     }
+    // falta metodo eliminar entrenador
   }
 }
