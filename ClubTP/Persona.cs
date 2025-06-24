@@ -5,7 +5,7 @@ namespace ClubTP
 {
 	public class Persona
 	{
-    // Minúscula las que tiene Propiedades, Para no tener error.
+
 		private string nombre;
 		private int dni;
 		private int edad;

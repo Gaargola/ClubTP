@@ -8,7 +8,8 @@ namespace ClubTP
 		private int legajo;
 		
 		public Entrenador(){}
-		public Entrenador(string nombre, int dni, int edad, int legajo):base(nombre,dni,edad)
+		public Entrenador(string nombre, int dni, int edad, int legajo)
+      : base(nombre,dni,edad)
 		{
 			this.legajo = legajo;
 		}
@@ -19,11 +20,6 @@ namespace ClubTP
       get {return legajo;}
       set {legajo = value;}
     }
-       public int Legajo
-       {
-            get {return legajo;}
-            set {legajo = value;}
-       }
     // Métodos
 		public int retornarLegajo()
 		{
