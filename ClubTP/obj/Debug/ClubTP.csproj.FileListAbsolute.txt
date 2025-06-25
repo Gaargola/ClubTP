@@ -3,3 +3,8 @@ C:\Users\nicod\OneDrive\Desktop\ClubTP\ClubTP\bin\Debug\ClubTP.exe
 C:\Users\nicod\OneDrive\Desktop\ClubTP\ClubTP\bin\Debug\ClubTP.pdb
 C:\Users\nicod\OneDrive\Desktop\ClubTP\ClubTP\obj\Debug\ClubTP.exe
 C:\Users\nicod\OneDrive\Desktop\ClubTP\ClubTP\obj\Debug\ClubTP.pdb
+C:\Users\nicod\OneDrive\Desktop\Algoritmos   y Progra\respaldo\obj\Debug\ClubTP.csprojResolveAssemblyReference.cache
+C:\Users\nicod\OneDrive\Desktop\Algoritmos   y Progra\respaldo\obj\Debug\ClubTP.exe
+C:\Users\nicod\OneDrive\Desktop\Algoritmos   y Progra\respaldo\obj\Debug\ClubTP.pdb
+C:\Users\nicod\OneDrive\Desktop\Algoritmos   y Progra\respaldo\bin\Debug\ClubTP.exe
+C:\Users\nicod\OneDrive\Desktop\Algoritmos   y Progra\respaldo\bin\Debug\ClubTP.pdb

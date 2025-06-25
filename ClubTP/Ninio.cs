@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections;
 
 namespace ClubTP
 {
   public class Ninio : Persona
 	{
-    private int ultimoPago;
+  	private int ultimoPago;
     private Deporte deporteRealizado;
-    private string categoria;
+    private string nomcategoria;
     private bool statusSocio;
 
     // Propiedades
@@ -25,63 +26,84 @@ namespace ClubTP
       get{return ultimoPago;}
       set{ultimoPago = value;}
     }
-    public string Categoria
+    public string NomCategoria
     {
-      get{return categoria;}
-      set{categoria = value;}
+      get{return nomcategoria;}
+      set{nomcategoria = value;}
     }
 
     // Constructor
-    public Ninio(string nombre, string dni, int edad, Deporte deporte, bool esSocio, int pago, string categoria)
-      : base(nombre, dni, edad)
+    public Ninio(){}
+    public Ninio(string nombre, int dni, int edad, Deporte deporte, bool esSocio, int ultpago, string nomcategoria):base(nombre, dni, edad)
     {
         this.deporteRealizado = deporte;
         this.statusSocio = esSocio;
-        this.ultimoPago = pago;
-        this.categoria = categoria;
+        this.ultimoPago = ultpago;
+        this.nomcategoria = nomcategoria;
     }
     
     // Métodos de instancia.
-    public bool Pagar(bool statusSocio)
+    public float calcularDescuento()
     {
-      if (statusSocio == true)
+    	float descuentoxCat = 0;
+    	float descuentoxDep = (float)DeporteRealizado.DescuentoPorDeporte;
+    	string cat = nomcategoria;
+    	ArrayList categos = DeporteRealizado.retornarCategorias();
+      //	bool haydesc = false;
+    	for (int i = 0; i<categos.Count;i++)
+    	{
+    		Categoria auxcat = (Categoria) categos[i];
+    		if (auxcat.NombreCat == cat)
+    		{
+    			descuentoxCat = (float)auxcat.DescuentoPorCategoria;
+    	//haydesc = true;
+    			break;
+    		}
+    	}
+    	//if (!haydesc){throw}
+    	float descuentoTotal = descuentoxDep + descuentoxCat;
+    	if (descuentoTotal > 100)
+    	{
+    		descuentoTotal = 100;
+    	}
+    	return descuentoTotal;
+    }
+    public bool Pagar()
+    {
+      if (deporteRealizado == null)
       {
-        int descuento = deporteRealizado.ObtenerDescuento();
-        Console.WriteLine("Es socio.");
-        Console.WriteLine("Deporte: {0}", deporteRealizado.nombre);
-        Console.WriteLine("Descuento aplicado: {0} %", descuento);
-        return true;
-      }
-      else 
-      {
-        Console.WriteLine("No es socio");
+        Console.WriteLine("Error: el niño no tiene asignado un deporte.");
         return false;
       }
-    }
-    
-    public void ModificarDeporte(bool nuevoEstatus)
-    {
-      statusSocio = nuevoEstatus;
-      if (statusSocio == true)
+      float descuentoTotal = calcularDescuento();
+      float preciocuota = 0;
+      ArrayList categos = deporteRealizado.retornarCategorias();
+      bool categoriaEncontrada = false;
+      for(int i = 0; i<categos.Count;i++)
       {
-        Console.WriteLine("Ahora está inscripto como socio.");
-        int descuento = deporteRealizado.ObtenerDescuento();
-        Console.WriteLine("Descuento correspondiente: {0} %", descuento);
+      	Categoria auxcat = (Categoria) categos[i];
+      	if (auxcat.NombreCat == nomcategoria)
+      	{
+      		preciocuota = auxcat.PrecioCuota;
+      		categoriaEncontrada = true;
+      		break;
+      	}
       }
-      else
+      if (!categoriaEncontrada)
       {
-        Console.WriteLine("Ahora no es socio.");
+      	//throw exception no existe esa categoria
       }
+      float montoFinal = preciocuota * (1-(descuentoTotal/100));
+      Console.WriteLine("Pagando cuota para: " + Nombre);
+      Console.WriteLine("Deporte: " + deporteRealizado.NombreDeporte);
+      Console.WriteLine("Categoría: " + nomcategoria);
+      if (statusSocio){Console.WriteLine("Estado: asociado");}
+      else{Console.WriteLine("Estado: desasociado");}
+      Console.WriteLine("Descuento aplicado: " + descuentoTotal + "%");
+      Console.WriteLine("Monto a pagar: " + montoFinal);
+      ultimoPago = DateTime.Now.Month;
+      Console.WriteLine("Pago registrado con éxito para el mes: " + ultimoPago);
+      return true;
     }
-
-    //public void definirCategiria(){}
-    //public void modificarEstatus(){}
-
-    // Ejemplo en el Main.
-    //Deporte futbol = new Deporte("Futbol");
-    //Ninio ninio1 = new Ninio("Lucas", "12345678", 10, futbol, true, 1500, "Infantil");
-    //ninio1.Pagar();              // Verifica si es socio y aplica descuento.
-    //ninio1.ModificarEstatus(false); // Cambia su estatus a no es socio.
-
-	}
+ }
 }

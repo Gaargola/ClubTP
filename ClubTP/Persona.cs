@@ -45,7 +45,6 @@ namespace ClubTP
     // Métodos
     public void MostrarDatos()
     {
-     // si no se agrega queda mejor Console.WriteLine("Datos de la Persona: ");
       Console.WriteLine("Nombre: {0} - DNI: {1} - Edad: {2} ", nombre, dni, edad);
     }
 	}

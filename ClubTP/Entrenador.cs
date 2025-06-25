@@ -21,10 +21,6 @@ namespace ClubTP
       set {legajo = value;}
     }
     // Métodos
-		public int retornarLegajo()
-		{
-		    return Legajo;
-		}
 		public void mostrarLegajo(){
 			Console.WriteLine("El legajo del entrenador es {0}",legajo);
     }

@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Club.cs" />
     <Compile Include="Deporte.cs" />
-    <Compile Include="DeporteCategoria.cs" />
+    <Compile Include="Categoria.cs" />
     <Compile Include="Entrenador.cs" />
     <Compile Include="Ninio.cs" />
     <Compile Include="Persona.cs" />
