@@ -10,14 +10,12 @@ namespace ClubTP
     // Valores con Propiedades en minúscula.
 		private string nombre;
 		private ArrayList Deportes;
-		private ArrayList DeportesCat;
 		private ArrayList Entrenadores;
 		private ArrayList Ninios;
 		
 		public Club()
 		{
 		    this.Deportes = new ArrayList();
-			this.DeportesCat = new ArrayList();
 			this.Entrenadores = new ArrayList();
 			this.Ninios = new ArrayList();
 		}
@@ -25,7 +23,6 @@ namespace ClubTP
 		{
 			this.nombre = nombre;
 			this.Deportes = new ArrayList();
-			this.DeportesCat = new ArrayList();
 			this.Entrenadores = new ArrayList();
 			this.Ninios = new ArrayList();
 		}
@@ -42,10 +39,6 @@ namespace ClubTP
     {
     	Deportes.Add(deporte);
     }
-    public void registrarDeporteCat(DeporteCategoria deporteCat)
-    {
-    	DeportesCat.Add(deporteCat);
-    }
     public void registrarNinio(Ninio ninio)
     {
     	Ninios.Add(ninio);
@@ -54,6 +47,27 @@ namespace ClubTP
     {
     	Entrenadores.Add(entrenador);
     }
+    
+    public void eliminarEntrenador(int legajo)
+    {
+       bool eliminado = false;
+       for (int i = 0; i<Entrenadores.Count; i++)
+       {
+       	Entrenador entrenador = (Entrenador) Entrenadores[i];
+       	if (entrenador.Legajo == legajo)
+       	{
+       		Entrenadores.RemoveAt(i);
+       	    eliminado = true;
+       	    Console.WriteLine("Entrenador eliminado correctamente.");
+       	    break;
+       	}
+       }
+       if (!eliminado)
+       {
+       	Console.WriteLine("El entrenador seleccionado no se encuentra registrado en el club");
+       }
+    }
+
     public void mostrarDeportes()
     {
     	Console.WriteLine("Los deportes practicados en el club son: ");
@@ -72,7 +86,79 @@ namespace ClubTP
             aux.MostrarDatos();
     	}
     }
-    // falta metodo eliminar entrenador
-  }
+    public void mostrarNinios()
+    {
+    	Console.WriteLine("Los ninios socios del club son: ");
+    	for (int i = 0; i<Ninios.Count;i++)
+    	{
+    		Ninio aux = (Ninio)Ninios[i];
+    		aux.MostrarDatos();
+    	}
+    }
+   public Deporte buscarDeporte(string nombreDeporte)
+   {
+      for (int i = 0; i < Deportes.Count; i++)
+      {
+        Deporte dep = (Deporte)Deportes[i];
+        if (dep.NombreDeporte.Equals(nombreDeporte, StringComparison.OrdinalIgnoreCase))
+        {
+            return dep;
+        }
+      }
+      return null;
+   }  
+
+   public Ninio buscarNinio(int dni)
+   {
+      for (int i = 0; i < Ninios.Count; i++)
+      {
+        Ninio ninio = (Ninio)Ninios[i];
+        if (ninio.Dni == dni)
+        {
+            return ninio;
+        }
+      }
+    return null;
+   }
+   public void eliminarDeporte(string nombre)
+   {
+   	  Deporte deporte = buscarDeporte(nombre);
+      if (deporte != null)
+      {
+         if (deporte.retornarInscriptos().Count > 0)
+         {
+            Console.WriteLine("No se puede eliminar el deporte, tiene inscriptos.");
+         }
+         else
+         {
+            Deportes.Remove(deporte);
+            Console.WriteLine("Deporte eliminado correctamente.");
+         }
+      }
+      else
+      {
+        Console.WriteLine("El deporte seleccionado no se encuentra registrado en el club.");
+      }
+   }
+
+
+   public void eliminarNinio(int dni)
+   {
+     Ninio ninio = buscarNinio(dni);
+     if (ninio == null)
+     {
+        Console.WriteLine("El ninio/a con el dni {0} no se encuentra registrado en el club", dni);
+     }
+     else
+     {
+        Ninios.Remove(ninio);
+        Console.WriteLine("Ninio/a eliminado correctamente.");
+     }
+   }
+
+   
+
+ }
 }
+
 // cambios nico
